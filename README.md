@@ -2,7 +2,7 @@
 
 This project is an AI-powered spam detection system that classifies emails and SMS as Spam or Not Spam (Ham) using machine learning and natural language processing. Messages are processed with TF-IDF, analyzed by ML models, and deployed via a modern Streamlit web app for real-time predictions.
 
-# **Live App** : https://sms-spam-detection-ydz8m4rxu6wggver3n3bak.streamlit.app/
+[![Streamlit App](https://img.shields.io/badge/🚀_Live_Demo-Click_Here-2B82F6?style=for-the-badge)](https://sms-spam-detection-ydz8m4rxu6wggver3n3bak.streamlit.app/)
 
 # **📓 Project Report: Email Spam Detection with Machine Learning**
 
