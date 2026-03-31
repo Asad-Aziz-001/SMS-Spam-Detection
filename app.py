@@ -328,7 +328,7 @@ if menu == "Home":
         user_input = st.text_area(
             label="",
             placeholder="Type or paste your email / SMS message here...",
-            height=160,
+            height=150,
             label_visibility="collapsed"
         )
 
