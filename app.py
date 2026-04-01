@@ -326,7 +326,7 @@ if menu == "Home":
         </div>
         """, unsafe_allow_html=True)
         user_input = st.text_area(
-            label="",
+            label="Message to analyze",
             placeholder="Type or paste your email / SMS message here...",
             height=150,
             label_visibility="collapsed"
@@ -421,7 +421,7 @@ elif menu == "About":
         <h2 style="color:#333;">👨‍💻 Developer</h2>
         <h3 style="margin-top:10px; color:#0078D7;">ASAD AZIZ</h3>
         <p style="color:gray;">Student of BS-Artificial Intelligence | AI Enthusiast | Developer</p>
-        <a href="https://github.com/Asad-Aziz-001" target="_blank" style="margin:10px; text-decoration:none;">🐙 GitHub</a> |
-        <a href="https://www.linkedin.com/in/asad-aziz-140p" target="_blank" style="margin:10px; text-decoration:none;">💼 LinkedIn</a>
+        <a href="https://asad-aziz-001.github.io/Portfolio/" target="_blank" style="margin:10px; text-decoration:none;">🐙 Portfolio</a> |
+        <a href="https://www.linkedin.com/in/asad-aziz-ai" target="_blank" style="margin:10px; text-decoration:none;">💼 LinkedIn</a>
     </div>
     """, unsafe_allow_html=True)
