@@ -2,14 +2,12 @@ import streamlit as st
 import joblib
 import warnings
 
-# Suppress all warnings (including scikit-learn version mismatch)
+# ✅ Add this block at the very top to suppress warnings
 warnings.filterwarnings('ignore')
-
-# Specifically suppress scikit-learn version warnings
 try:
     from sklearn.exceptions import InconsistentVersionWarning
     warnings.filterwarnings('ignore', category=InconsistentVersionWarning)
-except:
+except ImportError:
     pass
 
 # =============================
