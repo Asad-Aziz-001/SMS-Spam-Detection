@@ -2,31 +2,41 @@ import streamlit as st
 import joblib
 import warnings
 import sys
+import os
 
 # ============================================
-# SUPPRESS SCIKIT-LEARN VERSION WARNINGS
+# SUPPRESS ALL WARNINGS - MUST BE AT VERY TOP
 # ============================================
-# Filter all warnings to keep logs clean
+# Method 1: Suppress Python warnings globally
 warnings.filterwarnings('ignore')
 
-# Specifically filter scikit-learn InconsistentVersionWarning
+# Method 2: Suppress specific sklearn warnings
 try:
     from sklearn.exceptions import InconsistentVersionWarning
     warnings.filterwarnings('ignore', category=InconsistentVersionWarning)
 except ImportError:
     pass
 
-# Also filter any sklearn base warnings
-warnings.filterwarnings('ignore', category=UserWarning, module='sklearn')
+# Method 3: Suppress all UserWarnings (this catches the sklearn warnings)
+warnings.filterwarnings('ignore', category=UserWarning)
 
-# =============================
-# 1. Load Model & Vectorizer
-# =============================
-try:
-    model = joblib.load("spam_detector.joblib")
-    vectorizer = joblib.load("tfidf_vectorizer.joblib")
-except:
-    model, vectorizer = None, None
+# Method 4: Disable warnings completely (most aggressive)
+if not sys.warnoptions:
+    import os
+    os.environ["PYTHONWARNINGS"] = "ignore"
+
+# ============================================
+# 1. Load Model & Vectorizer (with suppressed warnings)
+# ============================================
+# Suppress warnings during model loading
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore")
+    try:
+        model = joblib.load("spam_detector.joblib")
+        vectorizer = joblib.load("tfidf_vectorizer.joblib")
+    except Exception as e:
+        model, vectorizer = None, None
+        st.error(f"Error loading models: {e}")
 
 # =============================
 # 2. Streamlit UI Config
