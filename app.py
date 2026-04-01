@@ -1,5 +1,16 @@
 import streamlit as st
 import joblib
+import warnings
+
+# Suppress all warnings (including scikit-learn version mismatch)
+warnings.filterwarnings('ignore')
+
+# Specifically suppress scikit-learn version warnings
+try:
+    from sklearn.exceptions import InconsistentVersionWarning
+    warnings.filterwarnings('ignore', category=InconsistentVersionWarning)
+except:
+    pass
 
 # =============================
 # 1. Load Model & Vectorizer
