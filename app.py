@@ -1,14 +1,23 @@
 import streamlit as st
 import joblib
 import warnings
+import sys
 
-# ✅ Add this block at the very top to suppress warnings
+# ============================================
+# SUPPRESS SCIKIT-LEARN VERSION WARNINGS
+# ============================================
+# Filter all warnings to keep logs clean
 warnings.filterwarnings('ignore')
+
+# Specifically filter scikit-learn InconsistentVersionWarning
 try:
     from sklearn.exceptions import InconsistentVersionWarning
     warnings.filterwarnings('ignore', category=InconsistentVersionWarning)
 except ImportError:
     pass
+
+# Also filter any sklearn base warnings
+warnings.filterwarnings('ignore', category=UserWarning, module='sklearn')
 
 # =============================
 # 1. Load Model & Vectorizer
