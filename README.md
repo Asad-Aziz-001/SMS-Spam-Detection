@@ -124,9 +124,9 @@ The confusion matrix shows very few misclassifications.
 
 Typical outcomes:
 
-Ham Example: "Let’s meet at 5 pm for the project." → Predicted: Not Spam ✅
+Ham Example: "Let’s meet at 5 pm for the project." → **Predicted: Not Spam ✅**
 
-Spam Example: "Congratulations! You’ve won a free vacation. Click here!" → Predicted: Spam 🚨
+Spam Example: "Congratulations! You’ve won a free vacation. Click here!" → **Predicted: Spam 🚨**
 
 # **6. Applications**
 
